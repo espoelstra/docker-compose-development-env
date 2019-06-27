@@ -1,4 +1,5 @@
-FROM python:3.6-slim
+ARG python_version
+FROM python:${python_version}-slim
 
 COPY . /code
 WORKDIR /code

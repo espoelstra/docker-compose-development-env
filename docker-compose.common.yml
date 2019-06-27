@@ -2,17 +2,110 @@ version: '2'
 
 services:
   python:
-    build: ./python
+    image: python:dev
+    build:
+      context: ./python
+      args:
+         python_version: '2.7.15'
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
       - POSTGRES_HOST
 
-  java:
-    build: ./java
+  python3.5:
+    image: python3.5:dev
+    build:
+      context: ./python
+      args:
+         python_version: 3.5
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
       - POSTGRES_HOST
+  python3.6:
+    image: python3.6:dev
+    build:
+      context: ./python
+      args:
+         python_version: 3.6
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+
+  python3.7:
+    image: python3.7:dev
+    build:
+      context: ./python
+      args:
+         python_version: 3.7
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+
+
+  java8:
+    image: java8:dev
+    build:
+      context:  ./java
+      args:
+         java_version: 8
+         maven_version: 3.5
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+  java9:
+    image: java9:dev
+    build:
+      context:  ./java
+      args:
+         java_version: 9
+         maven_version: 3.5
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+  java10:
+    image: java10:dev
+    build:
+      context:  ./java
+      args:
+         java_version: 10
+         maven_version: 3.5
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+  java11:
+    image: java11:dev
+    build:
+      context:  ./java
+      args:
+         java_version: 11
+         maven_version: 3.5
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_HOST
+
+#  java13:
+#    build:
+#      context:  ./java
+#      args:
+#         java_version: 13
+#         maven_version: '3.6.1'
+#    environment:
+#      - POSTGRES_USER
+#      - POSTGRES_PASSWORD
+#      - POSTGRES_DB
+#      - POSTGRES_HOST
